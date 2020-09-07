@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 
 # set compiler
 #set(CMAKE_C_COMPILER gcc)
@@ -42,15 +42,13 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 ###########################################################
 #add executable
 aux_source_directory(${CMAKE_SOURCE_DIR}/test EXE_SRC)
-add_executable(${PRO_NAME} ${EXE_SRC})
 ###########################################################
 
-###########################################################
 #link lib
 link_directories(${CMAKE_SOURCE_DIR}/lib)
 message(STATUS "linking lib ${LIB_NAME}")
+add_executable(${PRO_NAME} ${EXE_SRC})
 target_link_libraries(${PRO_NAME} PUBLIC ${LIB_NAME})
-###########################################################
 
 
 ###########################################################
